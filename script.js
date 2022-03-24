@@ -13,9 +13,13 @@ function addC() {
     alert("Clicked Add Col"); // Replace this line with your code.
 }
 
-// Remove a row
+// Remove a row //Done by Eric Gonzalez
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    document.getElementById("grid").deleteRow(-1);// grid is the table id
+    numRows --; //delete row count
+    if(numRows === 0){ 
+        numCols = 0;
+    }  
 }
 
 // Remove a column
@@ -29,9 +33,14 @@ function selectColor(){
     console.log(colorSelected);
 }
 
-// Fill all uncolored cells
+// Fill all uncolored cells //Done by Eric Gonzalez
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    let cell = document.getElementsByTagName("td");
+    for(let i = 0; i < cell.length; i++){
+      if(cell[i].style.backgroundColor){ //return the background property
+        cell[i].style.backgroundColor = colorSelected;
+        }  
+    }
 }
 
 // Fill all cells
@@ -39,7 +48,10 @@ function fillAll(){
     alert("Clicked Fill All"); // Replace this line with your code.
 }
 
-// Clear all cells
+// Clear all cells //Done by Eric Gonzalez
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    let cell = document.getElementsByTagName("td");
+    for(let i = 0; i < cell.length; i++){ //return the background property and make it change to white when clear
+        cell[i].style.backgroundColor = "white";
+    }
 }
