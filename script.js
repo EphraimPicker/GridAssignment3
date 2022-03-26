@@ -14,6 +14,9 @@ function addR() {
     }
     grid.appendChild(row);
     numRows++;      // track number of rows
+    let cell = row.insertCell(-1);
+    cell.onclick = function(){
+        this.style.backgroundColor = colorSelected;
 }
 
 // Add a column
@@ -26,6 +29,9 @@ function addC() {
         row.appendChild(col);
     }
     numCols++;      // track number of columns
+    let cell = row[i].insertCell(-1);
+    cell.onclick = function(){
+        this.style.backgroundColor = colorSelected;
 }
 
 // Remove a row //Done by Eric Gonzalez
